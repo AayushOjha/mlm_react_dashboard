@@ -1,0 +1,97 @@
+.container {
+  width: 85vw;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+.heading {
+  font-size: $font-size-xxl;
+  font-weight: 500;
+  &__sm {
+    font-size: $font-size-xl;
+    font-weight: 500;
+  }
+  &__lg {
+    font-size: $font-size-xxxl;
+    font-weight: 600;
+  }
+}
+.primary_colored {
+  color: $primary-color;
+}
+.card {
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.heading_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+}
+.c_form {
+  .row {
+    margin: 20px 0;
+    display: grid;
+    label {
+      display: block;
+      font-size: $font-size-sm;
+      color: $text-color-light;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      height: $font-size-md * 1.5 + 1.6rem;
+      padding: 0.8rem;
+      border-radius: 10px;
+      @include border;
+    }
+    .rich_text_editor {
+      height: 350px;
+      padding-bottom: 2px;
+      @include border;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  }
+  .half_input {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+}
+//Section: Layout classes
+.section-layout {
+  display: grid;
+  @include column-count(1);
+  grid-gap: 20px;
+}
+@for $i from 1 through 4 {
+  .column-layout-#{$i} {
+    @include column-count(#{$i});
+  }
+}
+@media only screen and (max-width: $mq-desktop) {
+  .column-layout-3 {
+    @include column-count(2);
+  }
+}
+@media only screen and (max-width: $mq-table) {
+  @for $i from 1 through 4 {
+    @if (#{$i} == 4) {
+      .column-layout-#{$i} {
+        @include column-count(2);
+      }
+    } @else {
+      .column-layout-#{$i} {
+        @include column-count(1);
+      }
+    }
+  }
+}
+//Section: End Layout classes
