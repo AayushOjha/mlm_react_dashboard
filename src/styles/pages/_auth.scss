@@ -1,0 +1,56 @@
+.auth-page-container {
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: $mq-phone-lg) {
+    & {
+      width: 95%;
+    }
+  }
+}
+
+.form-container {
+  padding: 30px;
+  width: 80%;
+  max-width: 500px;
+  form {
+    margin-top: 30px;
+    .input-wrapper {
+      margin-bottom: 25px;
+      input,
+      .p-inputtext {
+        width: 100%;
+        height: $font-size-md * 1.5 + 1.6rem;
+        padding: 0.8rem;
+        border-radius: 5px;
+        @include border;
+      }
+      label {
+        font-size: 12px;
+      }
+      .input-error {
+        position: absolute;
+        right: -25px;
+        top: 8px;
+        cursor: pointer;
+        line-height: 0.8;
+      }
+      .p-password {
+        width: 100%;
+      }
+    }
+    .btn {
+      border-radius: 5px;
+    }
+  }
+
+  @media screen and (max-width: $mq-phone-lg) {
+    & {
+      width: 95%;
+    }
+  }
+}

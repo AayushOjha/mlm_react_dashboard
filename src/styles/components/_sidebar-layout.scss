@@ -1,0 +1,20 @@
+.sidebar-layout {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: max(25vw, 350px) 1fr;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+
+  &__left-container {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  &__right-container {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  @media screen and (max-width: $mq-phone-lg) {
+    & {
+      grid-template-columns: 0px 1fr;
+    }
+  }
+}
