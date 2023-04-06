@@ -32,7 +32,7 @@ const TextInput = (props: {
         onBlur={formik.handleBlur}
         onChange={formik.handleChange}
       />
-      <label htmlFor="name">{label || startCase(name)}</label>
+      <label htmlFor={name}>{label || startCase(name)}</label>
       <ErrorText error={formik.errors[name]} touched={formik.touched[name]} />
     </div>
   );
@@ -50,11 +50,19 @@ const PasswordInput = ({
   return (
     <div className="p-float-label input-wrapper">
       <Password
-        value={formik.values.password}
-        onChange={(e: any) => formik.setFieldValue("password", e.target.value)}
+        className={classNames({
+          "p-invalid": formik.errors[name] && formik.touched[name],
+        })}
+        value={formik.values[name]}
+        onChange={(e: any) => formik.setFieldValue(name, e.target.value)}
         toggleMask
+        onBlur={() => {
+          if (formik.values[name]) {
+            formik.setFieldTouched(name, true);
+          }
+        }}
       />
-      <label htmlFor="name">{label || startCase(name)}</label>
+      <label htmlFor={name}>{label || startCase(name)}</label>
       <ErrorText error={formik.errors[name]} touched={formik.touched[name]} />
     </div>
   );

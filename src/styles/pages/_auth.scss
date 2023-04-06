@@ -29,6 +29,9 @@
         border-radius: 5px;
         @include border;
       }
+      .p-invalid {
+        border-color: $error-color;
+      }
       label {
         font-size: 12px;
       }

@@ -2,7 +2,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { PasswordInput, TextInput } from "../CustomInput";
 import { ISignUpForm } from "../../services/interfaces/signupForm";
-import { Password } from "primereact/password";
+import { alphanumericRegex, passwordRegex } from "../../services/helpers/regex";
+
+// TODO: change phone number input, take phone number with country code.
 
 type Props = {};
 
@@ -19,12 +21,32 @@ function SignupForm({}: Props) {
     },
     validationSchema: Yup.object({
       name: Yup.string()
-        .max(40, "Must be 40 characters or less")
-        .required("Required"),
+        .min(3)
+        .max(125)
+        .required()
+        .trim("remove whitespace")
+        .strict(),
+      email: Yup.string().email().required(),
+      phone: Yup.number().max(9999999999).min(999999999).required(),
       username: Yup.string()
-        .max(12, "Must be 12 characters or less")
+        .matches(
+          alphanumericRegex,
+          "username can only contain alfabets and numbers EX: abC123 | min: 3 & max: 15 characters"
+        )
+        .required(),
+      password: Yup.string()
+        .matches(
+          passwordRegex,
+          "password can only contain alfabets and symbols and numbers EX: @abC123!"
+        )
+        .required(),
+      rePassword: Yup.string()
+        .oneOf([Yup.ref("password"), loda], "Passwords don't match")
         .required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
+      referral: Yup.string().matches(
+        alphanumericRegex,
+        "please enter a valid reffral code"
+      ),
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
