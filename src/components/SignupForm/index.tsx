@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { PasswordInput, TextInput } from "../CustomInput";
 import { ISignUpForm } from "../../services/interfaces/signupForm";
 import { alphanumericRegex, passwordRegex } from "../../services/helpers/regex";
+import { user } from "../../services/helpers/user.api";
 
 // TODO: change phone number input, take phone number with country code.
 
@@ -41,7 +42,7 @@ function SignupForm({}: Props) {
         )
         .required(),
       rePassword: Yup.string()
-        .oneOf([Yup.ref("password"), loda], "Passwords don't match")
+        .oneOf([Yup.ref("password")], "Passwords don't match")
         .required("Required"),
       referral: Yup.string().matches(
         alphanumericRegex,
@@ -49,7 +50,15 @@ function SignupForm({}: Props) {
       ),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      user
+        .signUp(values)
+        .then((res) => {
+          console.log("Success");
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   });
 
