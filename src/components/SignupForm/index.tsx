@@ -4,6 +4,7 @@ import { PasswordInput, TextInput } from "../CustomInput";
 import { ISignUpForm } from "../../services/interfaces/signupForm";
 import { alphanumericRegex, passwordRegex } from "../../services/helpers/regex";
 import { user } from "../../services/helpers/user.api";
+import { Link } from "react-router-dom";
 
 // TODO: change phone number input, take phone number with country code.
 
@@ -83,6 +84,13 @@ function SignupForm({}: Props) {
           className="btn btn__full-width btn__lg"
         />
       </form>
+      <div className="seperator"></div>
+      <div className="log-in-text">
+        <span>{`Already have an account? `}</span>
+        <Link to="/auth/login">
+          <b className="primary_colored">Log in</b>
+        </Link>
+      </div>
     </div>
   );
 }

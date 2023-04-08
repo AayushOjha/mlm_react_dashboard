@@ -17,6 +17,9 @@
 }
 .primary_colored {
   color: $primary-color;
+  &__bg {
+    background-color: $primary-color;
+  }
 }
 .card {
   border-radius: 10px;
@@ -34,6 +37,7 @@
   cursor: pointer;
   border-radius: 10px;
   border: none;
+  text-align: center;
   &__full-width {
     width: 100%;
   }
@@ -41,6 +45,11 @@
     font-size: $font-size-lg;
     font-weight: 500;
     padding: 10px 15px;
+  }
+  &__outlined {
+    background-color: transparent;
+    border: 1px solid $primary-color;
+    color: $primary-color;
   }
 }
 .c_form {
@@ -72,6 +81,11 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
   }
+}
+.seperator {
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
 }
 //Section: Layout classes
 .section-layout {

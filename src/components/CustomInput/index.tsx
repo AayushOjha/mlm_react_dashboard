@@ -1,19 +1,16 @@
-import { useState } from "react";
 import { BiErrorCircle } from "react-icons/bi";
 import { InputText } from "primereact/inputtext";
 import { FormikContextType } from "formik";
-import { ISignUpForm } from "../../services/interfaces/signupForm";
 import { classNames } from "primereact/utils";
 import { ErrorColor } from "../../services/constants/colors";
 import { Tooltip } from "primereact/tooltip";
 import { useMediaQuery } from "../../services/hooks/UseWindowSize";
 import { startCase } from "lodash";
 import { Password } from "primereact/password";
-import "react-phone-number-input/style.css";
 
 const TextInput = (props: {
-  name: keyof ISignUpForm;
-  formik: FormikContextType<ISignUpForm>;
+  name: string;
+  formik: FormikContextType<any>;
   label?: string;
 }) => {
   const { name, formik, label } = props;
@@ -33,7 +30,10 @@ const TextInput = (props: {
         onChange={formik.handleChange}
       />
       <label htmlFor={name}>{label || startCase(name)}</label>
-      <ErrorText error={formik.errors[name]} touched={formik.touched[name]} />
+      <ErrorText
+        error={formik.errors[name] as string}
+        touched={formik.touched[name] as boolean}
+      />
     </div>
   );
 };
@@ -42,10 +42,12 @@ const PasswordInput = ({
   formik,
   label,
   name,
+  showFeedback = true,
 }: {
-  name: keyof ISignUpForm;
-  formik: FormikContextType<ISignUpForm>;
+  name: string;
+  formik: FormikContextType<any>;
   label?: string;
+  showFeedback?: boolean;
 }) => {
   return (
     <div className="p-float-label input-wrapper">
@@ -61,9 +63,13 @@ const PasswordInput = ({
             formik.setFieldTouched(name, true);
           }
         }}
+        feedback={showFeedback}
       />
       <label htmlFor={name}>{label || startCase(name)}</label>
-      <ErrorText error={formik.errors[name]} touched={formik.touched[name]} />
+      <ErrorText
+        error={formik.errors[name] as string}
+        touched={formik.touched[name] as boolean}
+      />
     </div>
   );
 };

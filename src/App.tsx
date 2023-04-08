@@ -10,14 +10,15 @@ import { SignupForm } from "./components/SignupForm";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import { LoginForm } from "./components/LoginForm";
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="auth" element={<AuthPage />}>
-          <Route index element={<h1>Log in</h1>} />
-          <Route path="Login" element={<h1>Log in</h1>} />
+          <Route index element={<NotFound />} />
+          <Route path="login" element={<LoginForm />} />
           <Route path="signup" element={<SignupForm />} />
           <Route path="forgot-password" element={<h1>Forgot Password</h1>} />
         </Route>
