@@ -1,0 +1,15 @@
+@import "./home";
+
+.dashboard-sidebar {
+  .sidebar-logo {
+    height: 100px;
+    margin: 30px;
+  }
+  .p-component,
+  .pi {
+    font-size: $font-size-md;
+  }
+}
+
+.dashboard-page-container {
+}

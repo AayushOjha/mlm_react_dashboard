@@ -7,14 +7,16 @@ type Props = {};
 
 function AuthPage({}: Props) {
   return (
-    <SidebarLayout
-      MainComponent={
-        <div className="auth-page-container">
-          <Outlet />
-        </div>
-      }
-      SidebarComponent={<FluidImage imageUrl={AuthBannerImage} />}
-    />
+    <div className="auth-page core-page">
+      <SidebarLayout
+        MainComponent={
+          <div className="core-page_container">
+            <Outlet />
+          </div>
+        }
+        SidebarComponent={<FluidImage imageUrl={AuthBannerImage} />}
+      />
+    </div>
   );
 }
 

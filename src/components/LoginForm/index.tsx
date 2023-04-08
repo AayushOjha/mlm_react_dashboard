@@ -1,13 +1,14 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Link, useNavigate } from "react-router-dom";
 
 import { PasswordInput, TextInput } from "../CustomInput";
 import { alphanumericRegex, passwordRegex } from "../../services/helpers/regex";
 import { user } from "../../services/helpers/user.api";
 import { ILoginForm } from "../../services/interfaces/loginForm";
-import { Link } from "react-router-dom";
 
 function LoginForm() {
+  const navigate = useNavigate();
   const formik = useFormik<ILoginForm>({
     initialValues: {
       username: "",
@@ -28,11 +29,11 @@ function LoginForm() {
       user
         .signIn(values)
         .then((res) => {
-          alert("User signed in successfully");
-          console.log(res.data);
+          navigate("/dashboard/home");
         })
         .catch((err) => {
-          console.log(err);
+          // TODO: integrate proper warnings in form only.
+          alert(err);
         });
     },
   });

@@ -1,0 +1,23 @@
+.nav-layout {
+  width: 100%;
+  margin-top: 30px;
+  .navbar {
+    margin-bottom: 30px;
+    &_left-container {
+      ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .breadcrumb {
+        font-weight: 700;
+        font-size: $font-size-xl;
+        color: $primary-color;
+        display: flex;
+        li {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

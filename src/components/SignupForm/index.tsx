@@ -1,16 +1,18 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Link, useNavigate } from "react-router-dom";
+
 import { PasswordInput, TextInput } from "../CustomInput";
 import { ISignUpForm } from "../../services/interfaces/signupForm";
 import { alphanumericRegex, passwordRegex } from "../../services/helpers/regex";
 import { user } from "../../services/helpers/user.api";
-import { Link } from "react-router-dom";
 
 // TODO: change phone number input, take phone number with country code.
 
 type Props = {};
 
 function SignupForm({}: Props) {
+  const navigate = useNavigate();
   const formik = useFormik<ISignUpForm>({
     initialValues: {
       name: "",
@@ -54,11 +56,11 @@ function SignupForm({}: Props) {
       user
         .signUp(values)
         .then((res) => {
-          console.log("Success");
-          console.log(res.data);
+          navigate("/dashboard/home");
         })
         .catch((err) => {
-          console.log(err);
+          // TODO: integrate proper warnings in form only.
+          alert(err);
         });
     },
   });

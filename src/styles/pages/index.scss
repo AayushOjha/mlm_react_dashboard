@@ -1,2 +1,20 @@
 @import "./not-found";
 @import "./auth";
+@import "./dashboard/index.scss";
+
+.core-page {
+  &_container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    @media screen and (max-width: $mq-phone-lg) {
+      & {
+        width: 95%;
+      }
+    }
+  }
+}

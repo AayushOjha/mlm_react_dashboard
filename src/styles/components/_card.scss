@@ -1,0 +1,19 @@
+// SECTION: Single value card
+.single-value-card {
+  .title {
+    color: #000;
+    font-size: $font-size-lg;
+    font-weight: 600;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    i {
+      font-size: $font-size-xl;
+      margin-right: 10px;
+    }
+  }
+  .value {
+    float: right;
+    font-weight: 700;
+  }
+}

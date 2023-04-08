@@ -3,14 +3,16 @@
   height: 100vh;
   display: grid;
   grid-template-columns: max(25vw, 350px) 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100%;
   overflow: hidden;
 
   &__left-container {
-    grid-area: 1 / 1 / 2 / 2;
+    height: 100%;
   }
   &__right-container {
-    grid-area: 1 / 2 / 2 / 3;
+    height: 100%;
+    overflow-y: auto;
+    background-color: $body-background-color;
   }
   @media screen and (max-width: $mq-phone-lg) {
     & {
