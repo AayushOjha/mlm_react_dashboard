@@ -2,11 +2,12 @@ type Props = {
   title: string;
   value: string;
   icon?: string;
+  cardclass?: string;
 };
 
-function SigleValueCard({ title, value, icon }: Props) {
+function SigleValueCard({ title, value, icon, cardclass }: Props) {
   return (
-    <div className="card single-value-card">
+    <div className={`card single-value-card ${cardclass || ""}`}>
       <div className="title">
         <i className={`pi ${icon || ""}`}></i>
         {title}
