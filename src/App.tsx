@@ -17,6 +17,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { LoginForm } from "./components/LoginForm";
 import DashboardHome from "./pages/dashboard/home";
+import { ProfileSection } from "./pages/dashboard/profile";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         </Route>
         <Route path="dashboard" element={<DashboardPage />}>
           <Route path="home" element={<DashboardHome />} />
+          <Route path="profile" element={<ProfileSection />} />
           <Route index path="*" element={<Navigate to="home" replace />} />
         </Route>
         <Route path="admin" element={<AdminDashboardPage />} />

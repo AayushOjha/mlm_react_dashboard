@@ -1,4 +1,5 @@
 @import "./home";
+@import "./profile-section";
 
 .dashboard-sidebar {
   .sidebar-logo {
@@ -9,7 +10,4 @@
   .pi {
     font-size: $font-size-md;
   }
-}
-
-.dashboard-page-container {
 }

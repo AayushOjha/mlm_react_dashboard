@@ -1,0 +1,22 @@
+.profile-section {
+  .p-avatar.p-avatar-xl {
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+    font-weight: bold;
+  }
+}
+
+.user-info-box {
+  &_icon {
+    font-size: $font-size-sm;
+    margin-right: 5px;
+  }
+  &_label {
+    font-size: $font-size-sm;
+    font-weight: 600;
+  }
+  &_value {
+    display: block;
+  }
+}

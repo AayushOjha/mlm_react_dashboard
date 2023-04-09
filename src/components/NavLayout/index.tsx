@@ -9,7 +9,6 @@ type Props = {
 function NavLayout({ children }: Props) {
   const location = useLocation();
   const segments = location.pathname.split("/").filter(Boolean);
-  console.log(segments);
 
   return (
     <div className="nav-layout">
@@ -17,7 +16,7 @@ function NavLayout({ children }: Props) {
         <div className="navbar_left-container">
           <ol className="breadcrumb">
             {segments.map((segment, index) => (
-              <li>{index ? `/ ${segment} ` : `${segment} `}</li>
+              <li key={index}>{index ? `/ ${segment} ` : `${segment} `}</li>
             ))}
           </ol>
         </div>
