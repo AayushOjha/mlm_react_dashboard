@@ -1,14 +1,18 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import { PasswordInput, TextInput } from "../CustomInput";
 import { alphanumericRegex, passwordRegex } from "../../services/helpers/regex";
 import { user } from "../../services/helpers/user.api";
 import { ILoginForm } from "../../services/interfaces/loginForm";
+import { loginUser } from "../../store/slices/userSlice";
+import Cookies from "js-cookie";
 
 function LoginForm() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const formik = useFormik<ILoginForm>({
     initialValues: {
       username: "",
@@ -29,6 +33,10 @@ function LoginForm() {
       user
         .signIn(values)
         .then((res) => {
+          // dispatch(loginUser(res.data)); We are not getting user details as result, insteads only token
+          Cookies.set("auth_token", res.data.token);
+        })
+        .then(() => {
           navigate("/dashboard/home");
         })
         .catch((err) => {

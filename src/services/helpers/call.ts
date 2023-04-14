@@ -34,7 +34,7 @@ const fetchJSON = (
   options = {
     ...options,
     headers: {
-      "Access-token": accessToken || "",
+      Authorization: `Bearer ${accessToken}` || "",
     },
   };
 

@@ -16,6 +16,11 @@ class User {
       method: "POST",
       data: { ...data },
     });
+
+  getDetails = () =>
+    fetchJSON(`${endpoint}/customer_details`, {
+      method: "GET",
+    });
 }
 
 const user = new User();
