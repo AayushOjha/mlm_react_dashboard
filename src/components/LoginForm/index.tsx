@@ -2,12 +2,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import Cookies from "js-cookie";
 
 import { PasswordInput, TextInput } from "../CustomInput";
 import { alphanumericRegex, passwordRegex } from "../../services/helpers/regex";
 import { user } from "../../services/helpers/user.api";
 import { ILoginForm } from "../../services/interfaces/loginForm";
-import Cookies from "js-cookie";
+import { setLoader } from "../../store/slices/uiOverlaysSlice";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -29,16 +30,19 @@ function LoginForm() {
         .required(),
     }),
     onSubmit: (values) => {
+      dispatch(setLoader(true));
       user
         .signIn(values)
         .then((res) => {
           Cookies.set("auth_token", res.data.token);
         })
         .then(() => {
+          dispatch(setLoader(false));
           navigate("/dashboard/home");
         })
         .catch((err) => {
           // TODO: integrate proper warnings in form only.
+          dispatch(setLoader(false));
           alert(err);
         });
     },

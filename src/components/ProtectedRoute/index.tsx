@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 import { user } from "../../services/helpers/user.api";
 import { storeUser } from "../../store/slices/userSlice";
-import FullScreenLoder from "../Loader/FullScreenLoder";
+import { FullScreenLoder } from "../Loader/FullScreenLoder";
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const dispatch = useDispatch();

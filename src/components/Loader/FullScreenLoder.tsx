@@ -17,4 +17,4 @@ function FullScreenLoder({}: Props) {
   );
 }
 
-export default FullScreenLoder;
+export { FullScreenLoder };

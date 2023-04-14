@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import UserReducer from "./slices/userSlice";
+import UiOverlaysResucer from "./slices/uiOverlaysSlice";
 
 export const store = configureStore({
   reducer: {
     user: UserReducer,
+    uiOverlays: UiOverlaysResucer,
   },
 });
 
