@@ -3,7 +3,7 @@ import { ReactNode, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 
 import { user } from "../../services/helpers/user.api";
-import { setUserDetails } from "../../store/slices/userSlice";
+import { storeUser } from "../../store/slices/userSlice";
 import FullScreenLoder from "../Loader/FullScreenLoder";
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
@@ -14,7 +14,7 @@ const ProtectedRoute = ({ children }: { children: ReactNode }) => {
     user
       .getDetails()
       .then((response) => {
-        dispatch(setUserDetails(response.data));
+        dispatch(storeUser(response.data));
         setuserAuthorised(true);
         setisLoading(false);
       })

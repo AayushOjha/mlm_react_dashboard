@@ -7,7 +7,6 @@ import { PasswordInput, TextInput } from "../CustomInput";
 import { alphanumericRegex, passwordRegex } from "../../services/helpers/regex";
 import { user } from "../../services/helpers/user.api";
 import { ILoginForm } from "../../services/interfaces/loginForm";
-import { loginUser } from "../../store/slices/userSlice";
 import Cookies from "js-cookie";
 
 function LoginForm() {
@@ -33,7 +32,6 @@ function LoginForm() {
       user
         .signIn(values)
         .then((res) => {
-          // dispatch(loginUser(res.data)); We are not getting user details as result, insteads only token
           Cookies.set("auth_token", res.data.token);
         })
         .then(() => {

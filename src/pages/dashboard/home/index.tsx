@@ -1,12 +1,17 @@
+import { useSelector } from "react-redux";
+
 import { SigleValueCard } from "../../../components/Card";
+import { IStore } from "../../../services/interfaces/redux";
 
 type Props = {};
 
 function DashboardHome({}: Props) {
+  const user = useSelector((store: IStore) => store.user);
+
   return (
     <div className="dashboard-home">
       <div className="card heading primary_colored">
-        Hello User, Welcome Back!!
+        Hello {user.name}, Welcome Back!!
       </div>
       <div className="section-layout column-layout-2">
         <SigleValueCard
