@@ -7,14 +7,14 @@ import Cookies from "js-cookie";
 // axios.interceptors.request.use((config) => {
 //   const t = config.paramsSerializer;
 //   return t;
-//   // config = (params: any) => {
-//   //   return Qs.stringify(params, {
-//   //     arrayFormat: "brackets",
-//   //   });
-//   // };
-//   // Adding default headers
-//   // if (config.headers) config.headers["Content-Type"] = "application/json";
-//   // return config;
+//    config = (params: any) => {
+//      return Qs.stringify(params, {
+//        arrayFormat: "brackets",
+//   });
+// };
+// Adding default headers
+// if (config.headers) config.headers["Content-Type"] = "application/json";
+// return config;
 // });
 
 const fetchJSON = (

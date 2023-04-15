@@ -1,12 +1,36 @@
+import { useEffect, useState } from "react";
 import randomColor from "randomcolor";
 import { Avatar } from "primereact/avatar";
-import { useSelector } from "react-redux";
-import { IStore } from "../../../services/interfaces/redux";
+import { useDispatch } from "react-redux";
+
+import { dashboard } from "../../../services/helpers/dashboardPages.api";
+import { setLoader } from "../../../store/slices/uiOverlaysSlice";
+import { IUpProfilePage } from "../../../services/interfaces/pageRespons/userPanel/profile";
 
 type Props = {};
 
 function ProfileSection({}: Props) {
-  const user = useSelector((store: IStore) => store.user);
+  const dispatch = useDispatch();
+  const [user, setUser] = useState<IUpProfilePage | undefined>();
+
+  useEffect(() => {
+    dispatch(setLoader(true));
+    dashboard
+      .getProfilePage()
+      .then((response) => {
+        setUser(response.data);
+      })
+      .catch
+      // TODO: creat a common method to make user logout and redirect to login page, then create class or a procidure to invoke it automatically whrn api givs error likr (500)
+      ()
+      .finally(() => {
+        dispatch(setLoader(false));
+      });
+  }, []);
+
+  if (!user) {
+    return <></>;
+  }
 
   return (
     <div className="profile-section card p-20">
@@ -39,7 +63,9 @@ function ProfileSection({}: Props) {
         <div className="user-info-box">
           <i className="pi pi-sitemap user-info-box_icon"></i>
           <span className="user-info-box_label">Member of</span>
-          <span className="user-info-box_value">ADMIN | Admin User</span>
+          <span className="user-info-box_value">
+            {user.parent.username} | {user.parent.name}
+          </span>
         </div>
       </div>
     </div>
