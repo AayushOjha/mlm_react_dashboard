@@ -22,3 +22,10 @@
     }
   }
 }
+
+// Section: avatar-dropdown
+.avatar-dropdown {
+  .p-menu-list .p-menuitem-link {
+    font-size: $font-size-md;
+  }
+}

@@ -1,1 +1,1 @@
-export { SigleValueCard } from "./SigleValueCard";
+export { SingleValueCard } from "./SingleValueCard";

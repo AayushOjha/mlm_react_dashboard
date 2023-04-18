@@ -1,4 +1,4 @@
-import { SigleValueCard } from "../../../components/Card";
+import { SingleValueCard } from "../../../components/Card/SingleValueCard";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 // import { CustomerService } from "./service/CustomerService";
@@ -53,7 +53,7 @@ function TeamSection({}: Props) {
   return (
     <div className="team-section">
       <div className="section-layout column-layout-2">
-        <SigleValueCard
+        <SingleValueCard
           cardclass="p-20"
           title="Team Size"
           value="89"

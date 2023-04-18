@@ -5,7 +5,7 @@ type Props = {
   cardclass?: string;
 };
 
-function SigleValueCard({ title, value, icon, cardclass }: Props) {
+function SingleValueCard({ title, value, icon, cardclass }: Props) {
   return (
     <div className={`card single-value-card ${cardclass || ""}`}>
       <div className="title">
@@ -17,4 +17,4 @@ function SigleValueCard({ title, value, icon, cardclass }: Props) {
   );
 }
 
-export { SigleValueCard };
+export { SingleValueCard };
