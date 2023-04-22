@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IUser } from "../../services/interfaces/user";
+import { IUser } from "../../services/interfaces/user.interface";
 
 const initialState: IUser = {
   name: "",

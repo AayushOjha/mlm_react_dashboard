@@ -35,7 +35,7 @@ function ProfileSection({}: Props) {
   return (
     <div className="profile-section card p-20">
       <Avatar
-        label="A"
+        label={user.name.slice(0, 1).toUpperCase()}
         size="xlarge"
         style={{
           backgroundColor: randomColor({ luminosity: "dark" }),
