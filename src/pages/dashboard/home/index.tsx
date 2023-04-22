@@ -5,7 +5,7 @@ import { IStore } from "../../../services/interfaces/redux";
 import { useEffect, useState } from "react";
 import { setLoader } from "../../../store/slices/uiOverlaysSlice";
 import { dashboard } from "../../../services/helpers/dashboardPages.api";
-import { IUpHomePage } from "../../../services/interfaces/pageRespons/userPanel/home";
+import { IUpHomePage } from "../../../services/interfaces/pageResponse/userPanel/home";
 
 type Props = {};
 
@@ -42,17 +42,17 @@ function DashboardHome({}: Props) {
         <SingleValueCard
           title="Total Earning"
           value={pageData.total_earnings.toString()}
-          icon="pi-money-bill"
+          icon="pi pi-money-bill"
         />
         <SingleValueCard
           title="Team Size"
           value={pageData.team_size.toString()}
-          icon="pi-users"
+          icon="pi pi-users"
         />
         <SingleValueCard
           title="Money Withdrawal"
           value={"sa" || pageData.money_withdrew || ""}
-          icon="pi-sign-out"
+          icon="pi pi-sign-out"
         />
       </div>
     </div>

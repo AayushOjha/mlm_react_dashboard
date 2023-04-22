@@ -54,8 +54,20 @@ const SidebarMenu = () => {
       },
     },
     {
-      label: "Withdraw",
-      icon: "pi pi-money-bill",
+      label: "Money",
+      items: [
+        {
+          label: "Earnings",
+          icon: "fas fa-money-bill-wave",
+          command: () => {
+            redirect("/dashboard/earnings");
+          },
+        },
+        {
+          label: "Withdraw",
+          icon: "fa fa-money-bill-transfer",
+        },
+      ],
     },
   ];
 

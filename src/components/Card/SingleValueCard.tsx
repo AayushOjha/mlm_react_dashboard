@@ -9,7 +9,7 @@ function SingleValueCard({ title, value, icon, cardclass }: Props) {
   return (
     <div className={`card single-value-card ${cardclass || ""}`}>
       <div className="title">
-        <i className={`pi ${icon || ""}`}></i>
+        {icon && <i className={icon} />}
         {title}
       </div>
       <div className="heading__lg value primary_colored">{value}</div>

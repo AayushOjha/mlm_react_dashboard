@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 
 import { dashboard } from "../../../services/helpers/dashboardPages.api";
 import { setLoader } from "../../../store/slices/uiOverlaysSlice";
-import { IUpProfilePage } from "../../../services/interfaces/pageRespons/userPanel/profile";
+import { IUpProfilePage } from "../../../services/interfaces/pageResponse/userPanel/profile";
 
 type Props = {};
 

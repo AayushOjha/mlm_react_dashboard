@@ -8,6 +8,8 @@ class DashboardPage {
   getProfilePage = () => fetchJSON(`${endpoint}/profile`, { method: "GET" });
 
   getTeamPage = () => fetchJSON(`${endpoint}/team`, { method: "GET" });
+
+  getEarningsPage = () => fetchJSON(`${endpoint}/earnings`, { method: "GET" });
 }
 
 const dashboard = new DashboardPage();

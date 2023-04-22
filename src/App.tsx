@@ -21,6 +21,7 @@ import { ProfileSection } from "./pages/dashboard/profile";
 import { TeamSection } from "./pages/dashboard/team";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { UiOverlays } from "./components/UIOverlays";
+import { Earnings } from "./pages/dashboard/money/Earnings";
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="home" element={<DashboardHome />} />
             <Route path="profile" element={<ProfileSection />} />
             <Route path="team" element={<TeamSection />} />
+            <Route path="earnings" element={<Earnings />} />
             <Route index path="*" element={<Navigate to="home" replace />} />
           </Route>
           <Route path="admin" element={<AdminDashboardPage />} />

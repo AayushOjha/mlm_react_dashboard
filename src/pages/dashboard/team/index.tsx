@@ -5,7 +5,7 @@ import { Column } from "primereact/column";
 import { useDispatch } from "react-redux";
 import { setLoader } from "../../../store/slices/uiOverlaysSlice";
 import { dashboard } from "../../../services/helpers/dashboardPages.api";
-import { IUpTeamPage } from "../../../services/interfaces/pageRespons/userPanel/team.interface";
+import { IUpTeamPage } from "../../../services/interfaces/pageResponse/userPanel/team.interface";
 
 function TeamSection() {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ function TeamSection() {
           cardclass="p-20"
           title="Team Size"
           value={pageData.team.length.toString()}
-          icon="pi-users"
+          icon="pi pi-users"
         />
       </div>
       <div className="card mt-20">
