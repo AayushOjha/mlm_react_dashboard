@@ -47,10 +47,24 @@
     font-weight: 500;
     padding: 10px 15px;
   }
+  &__xl {
+    font-size: $font-size-xxl;
+    font-weight: 700;
+    padding: 10px 15px;
+  }
   &__outlined {
     background-color: transparent;
     border: 1px solid $primary-color;
     color: $primary-color;
+    transition: all 0.1s linear;
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+  &__compact {
+    width: fit-content;
+    height: fit-content;
   }
 }
 .c_form {
@@ -87,6 +101,9 @@
   height: 1px;
   width: 100%;
   background-color: #ccc;
+}
+.bold_text {
+  font-weight: 700;
 }
 //Section: Layout classes
 .section-layout {

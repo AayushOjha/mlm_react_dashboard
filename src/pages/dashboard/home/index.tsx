@@ -51,7 +51,7 @@ function DashboardHome({}: Props) {
         />
         <SingleValueCard
           title="Money Withdrawal"
-          value={"sa" || pageData.money_withdrew || ""}
+          value={pageData.money_withdrew.toString()}
           icon="pi pi-sign-out"
         />
       </div>

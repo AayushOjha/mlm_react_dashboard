@@ -1,4 +1,4 @@
-import { IMTransaction } from "../../model/tranction.interface";
+import { IMTransaction } from "../../model/transaction.interface";
 
 export interface IUpEarningsPage {
   transactions: IMTransaction[];

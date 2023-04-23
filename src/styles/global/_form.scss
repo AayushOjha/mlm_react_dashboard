@@ -1,0 +1,32 @@
+.form-wrapper {
+  form {
+    margin: 30px 0;
+    .input-wrapper {
+      margin-bottom: 25px;
+      input,
+      .p-inputtext {
+        width: 100%;
+        height: $font-size-md * 1.5 + 1.6rem;
+        padding: 0.8rem;
+        border-radius: 5px;
+        @include border;
+      }
+      .p-invalid {
+        border-color: $error-color;
+      }
+      label {
+        font-size: 12px;
+      }
+      .input-error {
+        position: absolute;
+        right: -25px;
+        top: 8px;
+        cursor: pointer;
+        line-height: 0.8;
+      }
+      .p-password {
+        width: 100%;
+      }
+    }
+  }
+}

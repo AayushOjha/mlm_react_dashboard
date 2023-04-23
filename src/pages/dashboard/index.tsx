@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { SidebarLayout } from "../../components/SidebarLayout";
 import { FluidImage } from "../../components/FluidImage";
 import { NavLayout } from "../../components/NavLayout";
+import { useDispatch } from "react-redux";
 
 type Props = {};
 
@@ -66,6 +67,9 @@ const SidebarMenu = () => {
         {
           label: "Withdraw",
           icon: "fa fa-money-bill-transfer",
+          command: () => {
+            redirect("/dashboard/withdrawals");
+          },
         },
       ],
     },

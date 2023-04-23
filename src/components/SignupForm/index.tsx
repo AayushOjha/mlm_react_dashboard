@@ -66,7 +66,7 @@ function SignupForm({}: Props) {
   });
 
   return (
-    <div className="form-container signup-form card">
+    <div className="form-container form-wrapper signup-form card">
       <div className="heading__lg primary_colored">Sign up</div>
       <form onSubmit={formik.handleSubmit}>
         <TextInput name="name" formik={formik} />

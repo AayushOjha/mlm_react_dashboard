@@ -49,7 +49,7 @@ function LoginForm() {
   });
 
   return (
-    <div className="form-container login-form card">
+    <div className="form-container form-wrapper login-form card">
       <div className="heading__lg primary_colored">Log in</div>
       <form onSubmit={formik.handleSubmit}>
         <TextInput
