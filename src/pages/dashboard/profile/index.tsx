@@ -64,7 +64,7 @@ function ProfileSection({}: Props) {
           <i className="pi pi-sitemap user-info-box_icon"></i>
           <span className="user-info-box_label">Member of</span>
           <span className="user-info-box_value">
-            {user.parent.username} | {user.parent.name}
+            {user.parent?.username} | {user.parent?.name}
           </span>
         </div>
       </div>

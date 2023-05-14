@@ -24,6 +24,7 @@ import { UiOverlays } from "./components/UIOverlays";
 import { Earnings } from "./pages/dashboard/money/Earnings";
 import { Withdrawals } from "./pages/dashboard/money/Withdrawal";
 import { RequestWithdrawal } from "./pages/dashboard/money/RequestWithdrawal";
+import { AdminProtectedRoute } from "./components/ProtectedRoute/AdminProtectedRoute";
 
 const App = () => {
   return (
@@ -54,7 +55,14 @@ const App = () => {
             </Route>
             <Route index path="*" element={<Navigate to="home" replace />} />
           </Route>
-          <Route path="admin" element={<AdminDashboardPage />} />
+          <Route
+            path="admin"
+            element={
+              <AdminProtectedRoute>
+                <AdminDashboardPage />
+              </AdminProtectedRoute>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

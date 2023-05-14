@@ -21,6 +21,11 @@ class User {
     fetchJSON(`${endpoint}/customer_details`, {
       method: "GET",
     });
+
+  isAdmin = () =>
+    fetchJSON(`${endpoint}/is_admin`, {
+      method: "GET",
+    });
 }
 
 const user = new User();

@@ -20,6 +20,7 @@ export const userSlice = createSlice({
       email: action.payload.email,
       phone: action.payload.phone,
       isLoggedIn: true,
+      isAdmin: action.payload.isAdmin,
     }),
   },
 });

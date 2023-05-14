@@ -4,6 +4,7 @@ export interface IUser {
   phone: string;
   username: string;
   isLoggedIn: boolean;
+  isAdmin?: boolean;
 }
 
 // export interface IDbUser {
