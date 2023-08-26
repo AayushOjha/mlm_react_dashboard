@@ -6,15 +6,3 @@ export interface IUser {
   isLoggedIn: boolean;
   isAdmin?: boolean;
 }
-
-// export interface IDbUser {
-//   _id: string;
-//   name: string;
-//   username: string;
-//   email: string;
-//   plan: string;
-//   parent: string;
-//   createdAt: string;
-//   updatedAt: string;
-//   __v: 0;
-// }

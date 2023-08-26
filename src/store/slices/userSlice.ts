@@ -7,6 +7,7 @@ const initialState: IUser = {
   phone: "",
   username: "",
   isLoggedIn: false,
+  isAdmin: false,
 };
 
 export const userSlice = createSlice({

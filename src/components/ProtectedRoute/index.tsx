@@ -16,6 +16,7 @@ const ProtectedRoute = ({ children }: { children: ReactNode }) => {
     user
       .getDetails()
       .then((response) => {
+        console.log(response.data);
         dispatch(storeUser(response.data));
         setuserAuthorised(true);
         dispatch(setLoader(false));
